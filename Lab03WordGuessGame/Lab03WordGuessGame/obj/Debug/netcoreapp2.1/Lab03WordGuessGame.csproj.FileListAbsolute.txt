@@ -1,0 +1,11 @@
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\Lab03WordGuessGame\bin\Debug\netcoreapp2.1\Lab03WordGuessGame.deps.json
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\Lab03WordGuessGame\bin\Debug\netcoreapp2.1\Lab03WordGuessGame.runtimeconfig.json
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\Lab03WordGuessGame\bin\Debug\netcoreapp2.1\Lab03WordGuessGame.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\Lab03WordGuessGame\bin\Debug\netcoreapp2.1\Lab03WordGuessGame.dll
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\Lab03WordGuessGame\bin\Debug\netcoreapp2.1\Lab03WordGuessGame.pdb
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\Lab03WordGuessGame\obj\Debug\netcoreapp2.1\Lab03WordGuessGame.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\Lab03WordGuessGame\obj\Debug\netcoreapp2.1\Lab03WordGuessGame.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\Lab03WordGuessGame\obj\Debug\netcoreapp2.1\Lab03WordGuessGame.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\Lab03WordGuessGame\obj\Debug\netcoreapp2.1\Lab03WordGuessGame.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\Lab03WordGuessGame\obj\Debug\netcoreapp2.1\Lab03WordGuessGame.dll
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\Lab03WordGuessGame\obj\Debug\netcoreapp2.1\Lab03WordGuessGame.pdb
