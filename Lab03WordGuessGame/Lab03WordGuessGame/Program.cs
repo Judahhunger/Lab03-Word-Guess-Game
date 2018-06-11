@@ -26,7 +26,7 @@ namespace Lab03WordGuessGame
                     {
                         foreach (string item in defualtArray)
                         {
-                            if (item != "REMOVEME")
+                            if (item != "removeThisText")
                             {
                                 sw.WriteLine(item);
                             }
@@ -175,25 +175,19 @@ namespace Lab03WordGuessGame
 
         static void DeleteWord(string userWordToDelete)//checks to see if word is in array if so then deletes old text file and creates new one without word.
         {
-           string tempPath = "../../../MyTempFile.txt";
+            string[] tempArray = GetArrayOfWords();
 
-            using (SteamWriter sw = new SteamWriter(tempPath))
+            for (int i = 0; i < tempArray.Length; i++)
             {
-                string myString = "";
-
+                if (string.Equals(tempArray[i], userWordToDelete, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    tempArray[i] = "removeThisText";
+                }
             }
-           
-            try
-            {
-              
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-           
+            string tempPath = "../../../MyTempFile.txt";
+            CreateFile(tempPath, tempArray);
+            File.Delete(defualtPath);
+            File.Move(tempPath, defualtPath);
         }
 
         static void PlayGame()

@@ -2,6 +2,5 @@ StarWars
 Empire
 Rebels
 Vader
-Luke
 Boba Fett
 add
