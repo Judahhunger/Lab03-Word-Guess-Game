@@ -5,20 +5,18 @@ namespace Lab03WordGuessGame
 {
     class Program
     {
-       static string path = "../../../MyFile.txt";
+       static string defualtPath = "../../../MyFile.txt";
 
         static void Main(string[] args)
         {
             string[] defualtWords = new string[] { "StarWars", "Empire", "Rebels", "Vader", "Luke", "Boba Fett" };//defualt array of words
-           
-
-            CreateFile(defualtWords);
+            CreateFile(defualtPath, defualtWords);
+       
             WelcomeScreen();
-
-
+       
         }
 
-        static void CreateFile(string[] defualtArray)//Creates a file with defualt values if file has not been created
+        static void CreateFile(string path, string[] defualtArray)//Creates a file with defualt values if file has not been created
         {
             if (!File.Exists(path))
             {
@@ -26,66 +24,33 @@ namespace Lab03WordGuessGame
                 {
                     try
                     {
-                        foreach (var item in defualtArray)
+                        foreach (string item in defualtArray)
                         {
-                            sw.Write(item);
+                            if (item != "REMOVEME")
+                            {
+                                sw.WriteLine(item);
+                            }
+                       
                         }
-                        
+
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
                         Console.WriteLine("Error in CreateFile() method");
+                        Console.ReadLine();
                     }
                     finally
                     {
                         sw.Close();
                     }
-                   
+
                 }
+
             }
            
         }
 
-        static void ReadFile()
-        {
-            
-            using (StreamReader sr = File.OpenText(path))
-            {
-                /*string s = "";
-                while ((s = sr.ReadLine()) != null)
-                {
-                    Console.WriteLine(s);
-                }*/
-
-                try
-                {
-                    string[] myText = File.ReadAllLines(path);
-                    foreach (string value in myText)
-                    {
-                        Console.WriteLine(value);
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-            }
-        }
-
-        static void UpdateFile()
-        {
-            using (StreamWriter sw = File.AppendText(path))
-            {
-                sw.WriteLine("write something");
-            }
-        }
-
-        static void DeleteFile()
-        {
-            File.Delete(path);
-        }
-
-        static void WelcomeScreen()
+        static void WelcomeScreen()//main menu
         {
             bool mainMenuOpen = true; // make a bool so that if main is open it will stay open
 
@@ -96,62 +61,145 @@ namespace Lab03WordGuessGame
                 Console.WriteLine("1) Play Game.");
                 Console.WriteLine("2) Admin");
                 Console.WriteLine("3) Exit");
-                int userMenuInput = Int32.Parse(Console.ReadLine());
 
-                switch (userMenuInput)
+                try
                 {
-                    case 1:
-                        // PlayGame();
-                        break;
-                    case 2:
-                        AdminView();
-                        break;
-                    case 3:
-                        mainMenuOpen = false;
-                        Environment.Exit(0);
-                        break;
+                    int userMenuInput = Int32.Parse(Console.ReadLine());
+
+                    switch (userMenuInput)
+                    {
+                        case 1:
+                            // PlayGame();
+                            break;
+                        case 2:
+                            AdminView();
+                            break;
+                        case 3:
+                            Console.WriteLine("Press enter to Exit app");
+                            mainMenuOpen = false;
+                            Environment.Exit(0);
+                            continue;
+                    }
                 }
+                catch (Exception)
+                {
+                    Console.WriteLine("Please enter a number 1 , 2 or 3.");
+                    Console.ReadLine();
+                }
+            }
+
+        }
+
+        static void AdminView()//admin menu
+        {
+            bool adminBool = true;
+
+            while (adminBool)
+            {
+                Console.Clear();
+                Console.WriteLine("Pick what you would like to do.");
+                Console.WriteLine("1) View all Words");
+                Console.WriteLine("2) Add a Word");
+                Console.WriteLine("3) Delete a Word");
+                Console.WriteLine("4) Back to Main Menu");
+                string userAdminInput = Console.ReadLine();
+
+                try
+                {
+                    switch (userAdminInput)
+                    {
+                        case "1":
+                            foreach (string item in GetArrayOfWords())
+                            {
+                                Console.WriteLine(item);
+                            }
+                            Console.ReadLine();
+                            break;
+                        case "2":
+                            Console.WriteLine("What word would you like to add?");
+                            string userAddedWord = Console.ReadLine();
+                            AddWord(defualtPath, userAddedWord);
+                            Console.WriteLine($"{userAddedWord} is in the list of words");
+                            Console.ReadLine();
+                            break;
+                        case "3":
+                            Console.WriteLine("What word would you like to delete?");
+                            string wordToDeleted = Console.ReadLine();
+
+                            DeleteWord(wordToDeleted);
+                            
+                            break;
+                        case "4":
+                            adminBool = false;
+                            WelcomeScreen();
+                            break;
+                    }
+
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Error thrown return to Main Menu");
+                    Console.ReadLine();
+                    WelcomeScreen();
+                   
+                }
+            }
+
+        }
+
+        static string[] GetArrayOfWords()//returns lines of text to an array
+        { 
+            using (StreamReader sr = File.OpenText(defualtPath))
+            {
+                
+                 string[] wordArray = File.ReadAllLines(defualtPath);
+                 return wordArray;
+            }
+        }
+
+        static void AddWord(string path, string userWordToAdd)//checks to see if word is already in array of words if not then it adds it.
+        {
+            foreach (string word in GetArrayOfWords())
+            {
+                if (string.Equals(word, userWordToAdd, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    return;
+                }
+            }
+
+            using (StreamWriter sw = File.AppendText(path))
+            {   
+                sw.WriteLine(userWordToAdd);
+            }
+        }
+
+        static void DeleteWord(string userWordToDelete)//checks to see if word is in array if so then deletes old text file and creates new one without word.
+        {
+           string tempPath = "../../../MyTempFile.txt";
+
+            using (SteamWriter sw = new SteamWriter(tempPath))
+            {
+                string myString = "";
+
+            }
+           
+            try
+            {
+              
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
            
         }
 
-        static void AdminView()
+        static void PlayGame()
         {
-            Console.Clear();
-            Console.WriteLine("1) View all Words");
-            Console.WriteLine("2) Add a Word");
-            Console.WriteLine("3) Delete a Word");
-            Console.WriteLine("4) Back to Main Menu");
-            string userAdminInput = Console.ReadLine();
-
-            try
-            {
-                switch (userAdminInput)
-                {
-                    case "1":
-                        //Vew words method
-                        break;
-                    case "2":
-                        //update Words method
-                        break;
-                    case "3":
-                        //Delete a word / update methods
-                        break;
-                    case "4":
-                        WelcomeScreen();
-                        break;
-                }
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error thrown in AdminView() retrun to Main Menu");
-                Console.ReadLine();
-                WelcomeScreen();
-                //throw;
-            }
+            Random randomIndex = new Random();
+           // int number = randomIndex.Next(0, //method that return array.Length)
         }
-
-
     }
 }
