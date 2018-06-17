@@ -69,7 +69,7 @@ namespace Lab03WordGuessGame
                     switch (userMenuInput)
                     {
                         case 1:
-                            // PlayGame();
+                            PlayGame();
                             break;
                         case 2:
                             AdminView();
@@ -191,9 +191,59 @@ namespace Lab03WordGuessGame
         }
 
         static void PlayGame()
-        {
+        {  
             Random randomIndex = new Random();
-           // int number = randomIndex.Next(0, //method that return array.Length)
+            int number = randomIndex.Next(0, GetArrayOfWords().Length); //make random number to pick index of line for word.
+            string playerGuessed = "";
+            string randomWord = GetArrayOfWords()[number];//stores the random word from file without spaces
+            char[] lettersInWordArray = randomWord.ToLower().Trim().ToCharArray();//makes array of letters for easy comparison.
+            string[] displayWord = new string[randomWord.ToLower().Trim().Length];
+            bool correctAnswer = false;
+
+            for (int i = 0; i < randomWord.Length; i++)
+            {
+                displayWord[i] = " _ ";
+                if (lettersInWordArray[i] == ' ')
+                {
+                    displayWord[i] = " ";
+                }
+                
+            }
+
+            foreach (string item in displayWord)
+            {
+                Console.Write(item);
+            }
+          
+            while (correctAnswer == false)
+            {
+                Console.WriteLine("Guess a Letter");
+                string letter = Console.ReadLine().ToLower();
+                for (int i = 0; i < randomWord.Length; i++)
+                {
+                    if (letter != null && lettersInWordArray[i].ToString() == letter)
+                    {
+                            displayWord[i] = letter;
+                    }                    
+                }
+                 playerGuessed += letter;
+
+                for (int i = 0; i < displayWord.Length; i++)
+                {
+                    Console.Write(displayWord[i]);  
+                }
+
+                Console.WriteLine();
+                Console.WriteLine($"{playerGuessed} are the letters you have guessed");
+                if (String.Equals(String.Join("", displayWord), randomWord.ToLower()))
+                {
+                    Console.WriteLine("you got the word");
+                    Console.ReadLine();
+                    correctAnswer = true;
+                }
+                
+            }
+
         }
     }
 }

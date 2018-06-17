@@ -14,3 +14,4 @@
 Letters guessed are a b 
 
 --StarWars-- is the word the plaer is trying to guess.
+![console image of app running](WordGuessGame.png)
