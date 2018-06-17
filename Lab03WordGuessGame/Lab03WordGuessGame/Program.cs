@@ -238,7 +238,18 @@ namespace Lab03WordGuessGame
                 if (String.Equals(String.Join("", displayWord), randomWord.ToLower()))
                 {
                     Console.WriteLine("you got the word");
-                    Console.ReadLine();
+                    Console.WriteLine("enter 1 to play again or 2 to exit");
+                    string willPlayOrExit = Console.ReadLine();
+
+                    switch (willPlayOrExit)
+                    {
+                        case "1":
+                            PlayGame();
+                            break;
+                        default:
+                            Environment.Exit(0);
+                            break;
+                    }
                     correctAnswer = true;
                 }
                 
