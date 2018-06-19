@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Lab03WordGuessGame
 {
-    class Program
+     public class Program
     {
        static string defualtPath = "../../../MyFile.txt";
 
@@ -16,7 +16,13 @@ namespace Lab03WordGuessGame
        
         }
 
-        static void CreateFile(string path, string[] defualtArray)//Creates a file with defualt values if file has not been created
+        /// <summary>
+        /// Makes a file if the file does not exsist with string path variable defined at top of page.
+        /// Also puts in defualt values from array defined in main() above.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="defualtArray"></param>
+        public static string CreateFile(string path, string[] defualtArray)//Creates a file with defualt values if file has not been created
         {
             if (!File.Exists(path))
             {
@@ -32,7 +38,7 @@ namespace Lab03WordGuessGame
                             }
                        
                         }
-
+                       
                     }
                     catch (Exception)
                     {
@@ -47,10 +53,14 @@ namespace Lab03WordGuessGame
                 }
 
             }
-           
+            return "File made";
         }
 
-        static void WelcomeScreen()//main menu
+        /// <summary>
+        /// On page start will display messages to console and give use options.
+        /// Lets user play game, go to admin view or exit.
+        /// </summary>
+        public static void WelcomeScreen()//main menu
         {
             bool mainMenuOpen = true; // make a bool so that if main is open it will stay open
 
@@ -90,7 +100,11 @@ namespace Lab03WordGuessGame
 
         }
 
-        static void AdminView()//admin menu
+        /// <summary>
+        /// Lets user pick an option to see all words in file,
+        /// add words, delete words or return to main menu.
+        /// </summary>
+        public static void AdminView()//admin menu
         {
             bool adminBool = true;
 
@@ -147,7 +161,13 @@ namespace Lab03WordGuessGame
 
         }
 
-        static string[] GetArrayOfWords()//returns lines of text to an array
+        /// <summary>
+        /// Uses StreamReader to open filepath the MyFile.txt
+        /// Stores every line in file as value in array then 
+        /// returns that array.
+        /// </summary>
+        /// <returns></returns>
+        public static string[] GetArrayOfWords()//returns lines of text to an array
         { 
             using (StreamReader sr = File.OpenText(defualtPath))
             {
@@ -157,13 +177,19 @@ namespace Lab03WordGuessGame
             }
         }
 
-        static void AddWord(string path, string userWordToAdd)//checks to see if word is already in array of words if not then it adds it.
+        /// <summary>
+        /// checks to see if word user is trying to add is in array from GetArrayOfWords() method.
+        /// if it is not it will add that word to end line of MyFile.txt
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="userWordToAdd"></param>
+        public static string AddWord(string path, string userWordToAdd)//checks to see if word is already in array of words if not then it adds it.
         {
             foreach (string word in GetArrayOfWords())
             {
                 if (string.Equals(word, userWordToAdd, StringComparison.CurrentCultureIgnoreCase))
                 {
-                    return;
+                    return "Word added";
                 }
             }
 
@@ -171,9 +197,16 @@ namespace Lab03WordGuessGame
             {   
                 sw.WriteLine(userWordToAdd);
             }
+            return "Word added";
         }
 
-        static void DeleteWord(string userWordToDelete)//checks to see if word is in array if so then deletes old text file and creates new one without word.
+        /// <summary>
+        /// checks to see if word that user wants to add is in array from GetArrayOfWords(), 
+        /// if it is then it makes new file without that word,
+        /// deletes old file and replaces it with new file.
+        /// </summary>
+        /// <param name="userWordToDelete"></param>
+        public static string DeleteWord(string userWordToDelete)//checks to see if word is in array if so then deletes old text file and creates new one without word.
         {
             string[] tempArray = GetArrayOfWords();
 
@@ -188,14 +221,23 @@ namespace Lab03WordGuessGame
             CreateFile(tempPath, tempArray);
             File.Delete(defualtPath);
             File.Move(tempPath, defualtPath);
+            return "File Replaced";
         }
 
-        static void PlayGame()
+        /// <summary>
+        /// makes a random word from lines of MyFile.txt
+        /// makes new array with blank spaces to fill in per letter of random word
+        /// Then stores the word in a char array
+        /// checks if user input a letter in char array
+        /// if found the blank space from new array with blanks will now have a letter in place.
+        /// Stores user letters to help user guess what letters have not been tried.
+        /// </summary>
+        public static void PlayGame()
         {  
             Random randomIndex = new Random();
             int number = randomIndex.Next(0, GetArrayOfWords().Length); //make random number to pick index of line for word.
             string playerGuessed = "";
-            string randomWord = GetArrayOfWords()[number];//stores the random word from file without spaces
+            string randomWord = GetArrayOfWords()[number];//stores the random word from file
             char[] lettersInWordArray = randomWord.ToLower().Trim().ToCharArray();//makes array of letters for easy comparison.
             string[] displayWord = new string[randomWord.ToLower().Trim().Length];
             bool correctAnswer = false;
