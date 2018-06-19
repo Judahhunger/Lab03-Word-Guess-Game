@@ -1,0 +1,17 @@
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\bin\Debug\netcoreapp2.1\WordGuessGameTest.deps.json
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\bin\Debug\netcoreapp2.1\WordGuessGameTest.runtimeconfig.json
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\bin\Debug\netcoreapp2.1\WordGuessGameTest.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\bin\Debug\netcoreapp2.1\WordGuessGameTest.dll
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\bin\Debug\netcoreapp2.1\WordGuessGameTest.pdb
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\bin\Debug\netcoreapp2.1\Lab03WordGuessGame.dll
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\bin\Debug\netcoreapp2.1\Lab03WordGuessGame.pdb
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\obj\Debug\netcoreapp2.1\WordGuessGameTest.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\obj\Debug\netcoreapp2.1\WordGuessGameTest.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\obj\Debug\netcoreapp2.1\WordGuessGameTest.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\obj\Debug\netcoreapp2.1\WordGuessGameTest.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\obj\Debug\netcoreapp2.1\WordGuessGameTest.csproj.CopyComplete
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\obj\Debug\netcoreapp2.1\WordGuessGameTest.dll
+C:\Users\Admin\Desktop\Codefellows\401\Lab03-Word-Guess-Game\Lab03WordGuessGame\WordGuessGameTest\obj\Debug\netcoreapp2.1\WordGuessGameTest.pdb

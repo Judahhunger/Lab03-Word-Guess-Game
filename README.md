@@ -10,7 +10,10 @@
 - In admin menu, the user can view all the words or edit what words are used. 
 
 ## Getting Started
-*What are the steps that a user must take in order to build this app on their own machine and get it running?*
+- The following is required to run the program.
+- 1. Visual Studio 2017 
+- 2. The .NET desktop development workload enabled
+- 3. No External NuGet packages are required for this application. 
 
 #Example
 -player guesses - a.
